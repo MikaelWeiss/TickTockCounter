@@ -9,13 +9,10 @@
 
 import UIKit
 var numberOfTheBackground = 0
-//var textColer = 0
-// if i want to add this feacher in later
+// note to self Right now Im working on getting the background to save to user defaults
 
 class settings: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBAction func doneButton(_ sender: Any) {
-        
-    }
+    
     
     let arrayOfPickturesNumbers = ["Orange", "Blue", "Purple", "Hello There!"]
     
@@ -33,20 +30,20 @@ class settings: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         switch row {
         case 0:
             numberOfTheBackground = 0
+            backgroundDefaults.set(numberOfTheBackground, forKey: "backgroundNumber")
             print("Orenge")
-//            textColer = 0
         case 1:
             numberOfTheBackground = 1
+            backgroundDefaults.set(numberOfTheBackground, forKey: "backgroundNumber")
             print("Blue")
-//            textColer = 0
         case 2:
             numberOfTheBackground = 2
+            backgroundDefaults.set(numberOfTheBackground, forKey: "backgroundNumber")
             print("Purple")
-//            textColer = 1
         default:
             numberOfTheBackground = 0
+            backgroundDefaults.set(numberOfTheBackground, forKey: "backgroundNumber")
             print("orenge")
-//            textColer = 0
         }
     }
     
@@ -54,5 +51,6 @@ class settings: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
 
 }
